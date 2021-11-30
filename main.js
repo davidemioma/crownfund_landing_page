@@ -39,7 +39,7 @@ const activateReward = function (reward) {
 
   reward.querySelector("button").addEventListener("click", function (e) {
     e.preventDefault();
-    if (input !== "") {
+    if (input !== "" || +input > 0) {
       submitted.style.display = "grid";
 
       rewardModal.classList.add("hidden");
