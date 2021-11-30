@@ -2,6 +2,7 @@
 const navToggler = document.querySelector(".nav_toggler");
 const modal = document.querySelector(".modal");
 const closeBtn = document.querySelector(".close-modal");
+const backToProjectBtn = document.querySelector(".first_btn");
 const openRewardModalBtn = document.querySelectorAll(".open_reward-modal");
 const rewardModal = document.querySelector(".reward_modal");
 const closeRewardModalBtn = document.querySelector(".close_reward-modal");
@@ -14,6 +15,7 @@ const closeSubmitModalBtn = document.querySelector(".submit_modal button");
 //Function
 const openModal = function () {
   modal.style.display = "block";
+  modal.scrollIntoView({ behavior: "smooth" });
 };
 
 const closeModal = function () {
@@ -22,6 +24,7 @@ const closeModal = function () {
 
 const openRewardModal = function () {
   rewardModal.classList.remove("hidden");
+  rewardModal.scrollIntoView({ behavior: "smooth" });
 };
 
 const closeRewardModal = function () {
@@ -58,6 +61,8 @@ const closeSubmitModal = function () {
 navToggler.addEventListener("click", openModal);
 
 closeBtn.addEventListener("click", closeModal);
+
+backToProjectBtn.addEventListener("click", openRewardModal);
 
 openRewardModalBtn.forEach((btn) => {
   btn.addEventListener("click", openRewardModal);
