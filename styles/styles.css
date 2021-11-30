@@ -14,6 +14,8 @@ body {
   font-family: "Commissioner";
   font-size: 1.8rem;
   background-color: lightgrey;
+  min-height: 100vh;
+  position: relative;
 }
 
 h2 {
@@ -40,20 +42,8 @@ h2 {
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 40%;
+    width: 50%;
   }
-}
-
-.collapsible_content {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-
-.collapsible_expanded .collapsible_content {
-  max-height: 100vh;
-  opacity: 1;
 }
 
 .header {
@@ -71,8 +61,7 @@ h2 {
 }
 
 .nav_list {
-  width: 100%;
-  margin: 0;
+  display: none;
   list-style: none;
 }
 
@@ -108,6 +97,7 @@ h2 {
 
 @media screen and (min-width: 1024px) {
   .header {
+    padding: 5rem 4rem 30rem 4rem;
     background: url(../images/image-hero-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,6 +106,52 @@ h2 {
   .nav_list {
     gap: 3rem;
   }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 5rem 6rem 30rem 6rem;
+  }
+}
+
+/* NAV MODAL */
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  backdrop-filter: blur(50px);
+  z-index: 10;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  padding: 4rem 2.5rem;
+  display: none;
+  transition: all 0.5s;
+}
+
+.modal_list a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.modal_list a span {
+  margin-right: 1rem;
+  font-weight: 700;
+}
+
+.close-modal {
+  margin-left: 90%;
+}
+
+.modal_list {
+  margin-top: 10rem;
+  list-style: none;
+  display: grid;
+  gap: 5rem;
 }
 
 .first {
@@ -349,4 +385,136 @@ h2 {
 .grid {
   display: grid;
   gap: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* REWARD MODAL */
+.reward_modal {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  padding: 4rem;
+  border-radius: 30px;
+  overflow-y: scroll;
+}
+
+.reward_modal p {
+  line-height: 1.6;
+  color: hsl(0, 0%, 48%);
+}
+
+.reward_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.pledge {
+  margin-top: 0.5rem;
+  color: hsl(176, 50%, 47%);
+  font-weight: 100;
+}
+
+.reward_header h2 {
+  font-size: 2.5rem;
+}
+
+.rewards {
+  margin-top: 2rem;
+  display: grid;
+  gap: 4rem;
+}
+
+.reward-m {
+  padding: 2rem;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+}
+
+.reward-m h3 {
+  font-size: 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle span {
+  background: hsl(176, 50%, 47%);
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+}
+
+.reward-m p {
+  margin-bottom: 2rem;
+}
+
+.details {
+  padding-top: 2rem;
+  border-top: 1px solid;
+}
+
+.details h3 {
+  text-align: center;
+  color: hsl(0, 0%, 70%);
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.form input {
+  border: 1px solid hsl(176, 50%, 47%);
+  padding: 2rem;
+  outline: none;
+}
+
+.form button {
+  background: hsl(176, 50%, 47%);
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 2rem 4rem;
+}
+
+.form input,
+.form button {
+  border-radius: 30px;
+}
+
+.mahogany p {
+  border: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .reward_modal {
+    width: 40%;
+  }
 }
