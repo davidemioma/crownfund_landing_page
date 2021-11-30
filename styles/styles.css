@@ -22,10 +22,6 @@ h2 {
   font-size: 3rem;
 }
 
-button:hover {
-  transform: scale(1.1);
-}
-
 .container {
   width: 90%;
   margin: 0 auto;
@@ -193,10 +189,6 @@ button:hover {
   padding: 1rem 2rem 1rem 4rem;
   border-radius: 30px;
   border: 0;
-}
-
-.bookmark:hover {
-  transform: none;
 }
 
 .first_grid {

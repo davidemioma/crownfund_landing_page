@@ -8,14 +8,13 @@ const rewardModal = document.querySelector(".reward_modal");
 const closeRewardModalBtn = document.querySelector(".close_reward-modal");
 const noReward = document.querySelector(".no-reward");
 const bambooReward = document.querySelector(".bamboo");
-const BlackEditionReward = document.querySelector(".black_editon");
+const blackEditionReward = document.querySelector(".black_editon");
 const submitted = document.querySelector(".submit_modal");
 const closeSubmitModalBtn = document.querySelector(".submit_modal button");
 
 //Function
 const openModal = function () {
   modal.style.display = "block";
-  modal.scrollIntoView({ behavior: "smooth" });
 };
 
 const closeModal = function () {
@@ -36,14 +35,15 @@ const activateReward = function (reward) {
 
   reward.querySelector(".details").classList.remove("hidden");
 
+  const input = reward.querySelector("input").value;
+
   reward.querySelector("button").addEventListener("click", function (e) {
-    const input = +reward.querySelector("input").value;
+    e.preventDefault();
+    if (input !== "") {
+      submitted.style.display = "grid";
 
-    if (input === "" || input < 1) return;
-
-    submitted.style.display = "grid";
-
-    rewardModal.classList.add("hidden");
+      rewardModal.classList.add("hidden");
+    }
   });
 };
 
@@ -70,20 +70,20 @@ openRewardModalBtn.forEach((btn) => {
 
 closeRewardModalBtn.addEventListener("click", closeRewardModal);
 
-noReward.addEventListener("click", function () {
+noReward.addEventListener("click", function (e) {
   activateReward(noReward);
   deactivateReward(bambooReward);
-  deactivateReward(BlackEditionReward);
+  deactivateReward(blackEditionReward);
 });
 
-bambooReward.addEventListener("click", function () {
+bambooReward.addEventListener("click", function (e) {
   activateReward(bambooReward);
   deactivateReward(noReward);
-  deactivateReward(BlackEditionReward);
+  deactivateReward(blackEditionReward);
 });
 
-BlackEditionReward.addEventListener("click", function () {
-  activateReward(BlackEditionReward);
+blackEditionReward.addEventListener("click", function (e) {
+  activateReward(blackEditionReward);
   deactivateReward(noReward);
   deactivateReward(bambooReward);
 });
