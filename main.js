@@ -55,6 +55,7 @@ const deactivateReward = function (reward) {
 
 const closeSubmitModal = function () {
   submitted.style.display = "none";
+  submitted.scrollIntoView({ behavior: "smooth" });
 };
 
 //Event Listeners
